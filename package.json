@@ -1,0 +1,27 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "node+koa+mongo学习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wyllaz/node-koa-mongo-ejs.git"
+  },
+  "author": "王英",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wyllaz/node-koa-mongo-ejs/issues"
+  },
+  "homepage": "https://github.com/wyllaz/node-koa-mongo-ejs#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.3",
+    "koa-views": "^6.1.4"
+  }
+}
