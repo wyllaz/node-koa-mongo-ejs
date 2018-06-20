@@ -6,7 +6,23 @@
     <link rel="stylesheet" href="css/basic.css"/>
 </head>
 <body>
-<div class="demo">这是一个模版引擎<%=title%></div>
+<div class="demo">这是一个模版引擎</div>
 <img src="image/banner02.jpg">
+<table class="table">
+  <tr>
+      <td>姓名</td>
+      <td>年龄</td>
+      <td>性别</td>
+      <td>操作</td>
+  </tr>
+    <%for(var i =0;i<list.length;i++){%>
+    <tr>
+        <td><%=list[i].name%></td>
+        <td><%=list[i].age%></td>
+        <td><%=list[i].sex%></td>
+        <td><a href="/addUser">增加</a></td>
+    </tr>
+    <%}%>
+</table>
 </body>
 </html>

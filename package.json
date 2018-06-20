@@ -1,31 +1,27 @@
 {
-  "name": "y",
-  "version": "1.0.0",
-  "description": "node+koa+mongo学习",
-  "main": "index.js",
+  "name": "node-koa-mongo-ejs",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
+    "start": "node bin/www",
+    "dev": "./node_modules/.bin/nodemon bin/www",
+    "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wyllaz/node-koa-mongo-ejs.git"
-  },
-  "author": "王英",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wyllaz/node-koa-mongo-ejs/issues"
-  },
-  "homepage": "https://github.com/wyllaz/node-koa-mongo-ejs#readme",
   "dependencies": {
-    "art-template": "^4.12.2",
-    "ejs": "^2.6.1",
-    "koa": "^2.5.1",
-    "koa-art-template": "^1.1.1",
-    "koa-bodyparser": "^4.2.1",
-    "koa-router": "^7.4.0",
-    "koa-session": "^5.8.1",
-    "koa-static": "^4.0.3",
-    "koa-views": "^6.1.4",
-    "mongodb": "^3.0.10"
+    "co": "^4.6.0",
+    "debug": "^2.6.3",
+    "jade": "~1.11.0",
+    "koa": "^1.4.0",
+    "koa-bodyparser": "^2.5.0",
+    "koa-json": "^1.1.3",
+    "koa-logger": "^1.3.1",
+    "koa-onerror": "^1.3.1",
+    "koa-router": "^5.4.0",
+    "koa-static": "^1.5.2",
+    "koa-views": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
   }
 }

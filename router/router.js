@@ -16,19 +16,19 @@ router.get('/',async(ctx)=>{
         ctx.body = '<h1>首页</h1>';
     })
     // 路由级别的中间件     匹配之后继续匹配
-    .get('/new',async(ctx,next)=>{
+router.get('/new',async(ctx,next)=>{
         console.log('这是一个新闻');
         await next();
     })
-    .get('/new',async(ctx)=>{
+router.get('/new',async(ctx)=>{
         ctx.body = '<h1>新闻</h1>';
     })
-    .get('/new1',async(ctx)=>{
+router.get('/new1',async(ctx)=>{
         console.log(ctx.query);  // 获取get 的传值对象 { name: '1', age: '18' }
         ctx.body = '<h1>新闻详情</h1>';
     })
     // 动态路由
-    .get('/new2/:aid',async(ctx)=>{
+router.get('/new2/:aid',async(ctx)=>{
         console.log(ctx.params);  // 获取get 的传值对象 { name: '1', age: '18' }
         ctx.body = '<h1>新闻详情</h1>';
     })
