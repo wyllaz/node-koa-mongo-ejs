@@ -153,7 +153,9 @@ router.post('/doAdd', async (ctx) => {
     ctx.body = ctx.request.body;
 });
 
+
 app.use(router.routes()) .use(router.allowedMethods()); //启动路由
+
 
 //监听 3000端口
 app.listen(3000);

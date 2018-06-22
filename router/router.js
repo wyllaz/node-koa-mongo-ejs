@@ -2,6 +2,7 @@ const Koa = require('koa');
 const router = require('koa-router')();
 const app = new Koa();
 
+
 //应用及中间件  匹配任何路由之前都会先执行 可以配置公共信息
 app.use(async(ctx,next)=>{
     console.log(new Date());
