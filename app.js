@@ -57,16 +57,16 @@ app.use(session(CONFIG, app));
 
 
 // koa-art-template 指定路径和文件后缀
-// render(app, {
-//     root: path.join(__dirname,'/views'),
-//     extname: '.html',
-//     debug: process.env.NODE_ENV !== 'production' //是否开启调试模式
-// });
+render(app, {
+    root: path.join(__dirname,'/views'),
+    extname: '.html',
+    debug: process.env.NODE_ENV !== 'production' //是否开启调试模式
+});
 
 // 指定模版引擎的文件格式和路径
-app.use(views('views', {
-    extension: 'ejs'
-}));
+// app.use(views('views', {
+//     extension: 'ejs'
+// }));
 // 获取post请求的数据 ctx.request.body;
 app.use(bodyParser());
 
@@ -101,16 +101,13 @@ router.get('/', async (ctx, next) => {
         });
     })
 router.get('/login', async (ctx) => {
-        console.time('start');
         var result = await DB.find('user',{});
-        console.timeEnd('start');
-        console.log(result);
         // 获取cookie,把base64转化中文
         var data = ctx.cookies.get('user');
         var userName = new Buffer(data,'base64').toString();
         //设置session
         ctx.session.userinfo = '张三session';
-        await ctx.render('login',{
+        await ctx.render('user/login',{
             cookieName: userName
         });
     })
@@ -148,7 +145,7 @@ router.get('/addUser', async (ctx) => {
 /**
  * 配置子路由 层级路由
  */
-// router.use('/admin',admin.routes());
+router.use('/admin',admin.routes());
 
 router.post('/doAdd', async (ctx) => {
     console.log(ctx.request.body);
